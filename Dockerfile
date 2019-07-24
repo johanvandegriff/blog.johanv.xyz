@@ -5,5 +5,5 @@ COPY patch.sh .
 
 EXPOSE 8080
 
-CMD ["./patch.sh"]
+RUN ["./patch.sh"]
 CMD ["bin/writefreely"]
