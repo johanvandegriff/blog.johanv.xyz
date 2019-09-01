@@ -1,8 +1,10 @@
 #!/bin/sh
-#add "email me for comments" to the footer
+#add "email me for comments" to the footer of the posts
 #<a id="f50d9c68" href="#f50d9c68" onclick="this.innerHTML='&#x202e;'+'moc'+'&#x2e;'+'liamydnav'+'&#x40;'+'nahoj'+'&#x202d;'">[click to show]</a>
-sed -i "s,</nav></footer>,Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a> with the article name in the subject line.</nav></footer>,g" templates/collection.tmpl templates/collection-tags.tmpl templates/collection-post.tmpl
+sed -i "s,</nav></footer>,<p>Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a> with the article name in the subject line.</p></nav></footer>,g" templates/collection.tmpl templates/collection-tags.tmpl templates/collection-post.tmpl
 
+#email on main page
+sed -i "s,			</nav>,			<p>Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a>.</p></nav>,g" templates/collection.tmpl
 
 #remove top-left menu
 sed -i 's,{{if or .IsOwner .SingleUser}}<nav id="manage"><ul>,{{if or .IsOwner}}<nav id="manage"><ul>,' templates/collection.tmpl
