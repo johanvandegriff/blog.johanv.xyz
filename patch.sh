@@ -1,10 +1,11 @@
 #!/bin/sh
 #add "email me for comments" to the footer of the posts
 #<a id="f50d9c68" href="#f50d9c68" onclick="this.innerHTML='&#x202e;'+'moc'+'&#x2e;'+'liamydnav'+'&#x40;'+'nahoj'+'&#x202d;'">[click to show]</a>
-sed -i "s,</nav></footer>,<p>Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a> with the article name in the subject line.</p></nav></footer>,g" templates/collection.tmpl templates/collection-tags.tmpl templates/collection-post.tmpl
+#<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+sed -i "s,</nav></footer>,<p>Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a> with the article name in the subject line.</p>"'<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</nav></footer>,g' templates/collection.tmpl templates/collection-tags.tmpl templates/collection-post.tmpl
 
 #email on main page
-sed -i "s,			</nav>,			<p>Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a>.</p></nav>,g" templates/collection.tmpl
+sed -i "s,			</nav>,			<p>Send comments to my email at <a id=\"f50d9c68\" href=\"#f50d9c68\" onclick=\"this.innerHTML='\&#x202e;'+'moc'+'\&#x2e;'+'liamydnav'+'\&#x40;'+'nahoj'+'\&#x202d;'\">[click to show]</a>.</p>"'<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</nav>,g' templates/collection.tmpl
 
 #remove top-left menu
 sed -i 's,{{if or .IsOwner .SingleUser}}<nav id="manage"><ul>,{{if or .IsOwner}}<nav id="manage"><ul>,' templates/collection.tmpl
@@ -31,7 +32,3 @@ sed -i 's,{{range .PinnedPosts}},<a class="pinned" href="https://johanv.xyz/">Ho
 #		{{end}}
 
 #<a class="pinned" href="https://johanv.xyz/">Home</a>
-
-
-
-
