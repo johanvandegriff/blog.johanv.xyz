@@ -18,6 +18,7 @@ I got johanv.xyz on [NameSilo](https://www.namesilo.com/) for only a few dollars
 Based on [this guide](https://upcloud.com/community/tutorials/get-started-dokku-debian/).
 
 Update and install Docker, Dokku, and dependencies.
+
 ```
 ssh root@123.45.67.89 #replace this with your server's ip address
 apt update
@@ -65,7 +66,7 @@ git clone https://gitlab.com/johanvandegriff/blog.johanv.xyz.git
 ```
 You will want to edit config.ini and change the site's name and URL. I set it to a single-user instance, so you may want to change it back to a multi-user setup.
 
-I also used a bash script to patch the docker image, adding a footer with my email address, among other things. You will want to change the email address to your own, or remove it (I don't want to get random emails because you left it as mine. :) The address is obfuscated, so it's kind of awkward to change, but I have published the [PHP code I used to generate it](https://gitlab.com/johanvandegriff/johanv.xyz/blob/master/header.php#L92). There are tons of other [ways ot obfuscate email addresses](https://stackoverflow.com/questions/748780/best-way-to-obfuscate-an-e-mail-address-on-a-website) as well.
+I also used a bash script to patch the docker image, adding a footer with my email address, among other things. You will want to change the email address to your own, or remove it (I don't want to get random emails because you left it as mine. :) The address is obfuscated, so it's kind of awkward to change, but I have published the [PHP code I used to generate it](https://gitlab.com/johanvandegriff/johanv.xyz/blob/master/header.php#L92). There are tons of other [ways to obfuscate email addresses](https://stackoverflow.com/questions/748780/best-way-to-obfuscate-an-e-mail-address-on-a-website) as well.
 
 ### Deploy to Dokku
 ```
